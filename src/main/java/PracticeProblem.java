@@ -4,24 +4,25 @@ public class PracticeProblem {
 
 	}
 
-	public static void q1() {
-		//Write question 1 code here
+	public static String getFirstName(String name) {
+
+		String firstName = name.trim().substring(0, name.trim().indexOf(" "));
+		
+		return firstName;
 	}
 
-	public static void q2() {
-		//Write question 2 code here
+	public static String getLastName(String name) {
+
+		String lastName = name.trim().substring(name.trim().lastIndexOf(" ")+1);
+		
+		return lastName;
 	}
 
-	public static void q3() {
-		//Write question 3 code here
-	}
+	public static Boolean isValidName(String name) {
 
-	public static void q4() {
-		//Write question 4 code here
+		Boolean validName = name.trim().contains(" ") && name.trim().substring(0,name.trim().indexOf(" ")).length()>=2 && name.trim().substring(name.trim().lastIndexOf(" ")+1).length()>=2 && !name.trim().replaceFirst(" ", "").contains(" ");
+		
+		return validName;
 	}
-
-	public static void q5() {
-		//Write question 5 code here
-	}
-
 }
+
